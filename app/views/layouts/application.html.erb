@@ -6,6 +6,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+<!-- Script for displaying image preview on post -->
     <script>
     function readURL(input) {
       if (input.files && input.files[0]) {
@@ -20,36 +21,22 @@
       }
     }
 </script>
+<!-- Script for file upload button style -->
 <script>
   document.getElementById("uploadBtn").onchange = function () {
       document.getElementById("uploadFile").value = this.value;
   };
 </script>
-
 </head>
 <body>
 <% if current_user %>
   <%= render :partial => "partials/nav" %>
 <% else %>
-<!-- Don't Display Navbar -->
+<!-- Don't Display Navbar If User Isn't Logged-in -->
 <% end %>
-	<div id="container">
-		<div id="user_header">
-			<% if current_user %>
-			  Logged in as <%= current_user.email %>.
-			  <%= link_to "Log Out", logout_path %>
-			<% else %>
-			  <%= link_to "Sign Up", signup_path %> or
-			  <%= link_to "Log In", login_path %>
-			<% end %>
-		</div>
-		<% flash.each do |name,msg| %>
-			<%= content_tag :div, msg, id: "flash_#{name}" %>
-		<% end %>
-
 		<%= yield %>
 	</div>
-  <!-- jQuery if needed -->
+  <!-- Login form -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript">
       $(function(){
