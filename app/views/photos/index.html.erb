@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="well post_image">
+    <form accept-charset="UTF-8" action="/photos" class="new_photo" enctype="multipart/form-data" id="new_photo" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden"  class="file optional" value="g8DsEI6IgczsSn1AnjLuTDvjJda1/QlH6qS33cmIU0U="/></div>
+    <span class="btn btn-default btn-file">
+    Browse <input id="photo_image" name="photo[image]" type="file" onchange="readURL(this);">
+    </span>
+    <input class="btn btn-success post_photo_button" name="commit" type="submit" value="Post Photo" />
+    <img class="pull-right" id="img_prev" src="">
+    <textarea id="photo_content" name="photo[content]" placeholder="Story for your photo"></textarea>
+  <div class="container">
+      </div>  
+        </form>
+          </div>
+          <% @photos.each do |p| %>
+            <br />
+            <div class="container image_feed">
+            <span class="feed_user_name">
+            <%= p.user.username %> </span><br />
+            <%= image_tag p.image.url(:large), class: 'image' %>  <br />
+            <span class="time_right"><%= time_ago_in_words(p.image_updated_at) + "\sago" %></span><br/><hr>
+            <div class="image_feed_text"> <%= p.content %> <br /></div>
+             <br />
+            </div>
+        <% end %>
+    </div>
+  </div>
