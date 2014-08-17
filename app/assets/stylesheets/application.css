@@ -76,6 +76,7 @@ input[type="file"] {
   font-size: 35px;
   margin: 16px 4px 6px 9px;
   float: left;
+  cursor: default;
 }
 #photo_content {
   margin-top:   16px;
@@ -148,10 +149,12 @@ textarea:focus, input:focus {
 .image_feed_text {
   margin: 8px 8px;
   max-width: 350px;
+  cursor: default;
 }
 .time_right {
   float: right;
   margin-top: 4px;
+  cursor: default;
 }
 .time_right::before {
   content: 'Posted ';
@@ -180,4 +183,21 @@ textarea:focus, input:focus {
 .sign-up-back-button {
   margin-top: 12px;
   margin-bottom: -8px
+}
+.current-user-logged-in-navbar {
+  margin-top: 13px;
+  margin-right: 9px;
+  color: #fff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: inherit;
+}
+.navbar-default {
+  background-image: -webkit-linear-gradient(top,#517fa4,#183044);
+}
+.navbar-brand, .active > a {
+  color: #fff!important;
+  font-family: 'Lobster', cursive;
+  font-size: 28px;
+  font-variant: small-caps;
 }

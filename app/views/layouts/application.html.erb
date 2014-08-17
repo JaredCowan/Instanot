@@ -28,6 +28,11 @@
 
 </head>
 <body>
+<% if current_user %>
+  <%= render :partial => "partials/nav" %>
+<% else %>
+<!-- Don't Display Navbar -->
+<% end %>
 	<div id="container">
 		<div id="user_header">
 			<% if current_user %>
