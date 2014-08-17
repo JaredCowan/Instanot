@@ -1,34 +1,24 @@
-<div class="container">
-  <h1>Sign Up</h1>
-
-  <%= simple_form_for @user do |f| %>
-    <% if @user.errors.any? %>
-      <div class="error_messages">
-        <h2>Form is invalid</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+<div class="container sign-up-form">
+  <form accept-charset="UTF-8" action="/users" class="form-4" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="g8DsEI6IgczsSn1AnjLuTDvjJda1/QlH6qS33cmIU0U=" /></div>
+      <p class="sign-up-title"> Sign Up!</p>
+      <div class="field">
+        <label class="string optional" for="user_username">Username</label><br />
+        <input class="sign-up" id="user_username" name="user[username]" type="text" placeholder="Username" />
       </div>
-    <% end %>
-
-    <div class="field">
-      * <%= f.label :username, hint: 'You cannot change your username.' %><br />
-      <%= f.text_field :username, required: true %>
-    </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <div class="actions"><%= f.submit "Sign Up" %></div>
-  <% end %>
+      <div class="field">
+        <label class="email optional" for="user_email">Email</label><br />
+        <input class="sign-up" id="user_email" name="user[email]" type="text" placeholder="Email" />
+      </div>
+      <div class="field">
+        <label class="password required" for="user_password"><abbr title="required">*</abbr> Password</label><br />
+        <input class="sign-up" id="user_password" name="user[password]" type="password" placeholder="Password" />
+      </div>
+      <div class="field">
+        <label class="password optional" for="user_password_confirmation">Password confirmation</label><br />
+        <input class="sign-up" id="user_password_confirmation" name="user[password_confirmation]" type="password"placeholder="Confirm Password" />
+      </div>
+      <div class="actions"><input class="btn btn-primary btn-block" id="sign-up-button" name="commit" type="submit" value="Sign Up" />
+      <center class="sign-up-back-button"><%= link_to "Back To Login Form", login_path %></center>
+      </div>
+  </form>
 </div>

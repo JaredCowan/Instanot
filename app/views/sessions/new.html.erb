@@ -1,15 +1,39 @@
-<div class="container">
+<section class="main">
+  <form class="form-2" accept-charset="UTF-8" action="/sessions" method="post" >
+    <h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+    <input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="g8DsEI6IgczsSn1AnjLuTDvjJda1/QlH6qS33cmIU0U=" />
+    <p class="float">
+      <label for="email"><i class="icon-user"></i>Email</label>
+      <input id="email" name="email" type="text" placeholder="Email">
+    </p>
+    <p class="float">
+      <label for="password"><i class="icon-lock"></i>Password</label>
+      <input id="password" name="password" type="password" placeholder="Password" class="showpassword">
+    </p>
+    <p class="clearfix"> 
+      <a href="<%= signup_path %>" class="log-twitter">Sign Up</a>    
+      <input type="submit" name="submit" value="Log in">
+    </p>
+  </form>​​
+</section>
+
+
+
+
+
+
+<!-- <div class="container">
   <h1>Log In</h1>
 
-  <%= form_tag sessions_path do %>
+  <%#= form_tag sessions_path do %>
     <div class="field">
-      <%= label_tag :email %><br />
-      <%= text_field_tag :email, params[:email] %>
+      <%#= label_tag :email %><br />
+      <%#= text_field_tag :email, params[:email] %>
     </div>
     <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
+      <%#= label_tag :password %><br />
+      <%#= password_field_tag :password %>
     </div> <br />
-    <div class="actions"><%= submit_tag "Log In", class: 'btn btn-success' %></div>
-  <% end %>
-</div>
+    <div class="actions"><%#= submit_tag "Log In", class: 'btn btn-success' %></div>
+  <%# end %>
+</div> -->

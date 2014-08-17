@@ -4,13 +4,14 @@
     <span class="btn btn-default btn-file">
     Browse <input id="photo_image" name="photo[image]" type="file" onchange="readURL(this);">
     </span>
-    <input class="btn btn-success post_photo_button" name="commit" type="submit" value="Post Photo" />
+    <input class="btn btn-info post_photo_button" name="commit" type="submit" value="Post Photo" />
     <img class="pull-right" id="img_prev" src="">
     <textarea id="photo_content" name="photo[content]" placeholder="Story for your photo"></textarea>
   <div class="container">
       </div>  
         </form>
           </div>
+          <div class="image_feed_background_container">
           <% @photos.each do |p| %>
             <br />
             <div class="container image_feed">
@@ -22,5 +23,6 @@
              <br />
             </div>
         <% end %>
+        </div>
     </div>
   </div>
