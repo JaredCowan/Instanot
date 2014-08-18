@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   rescue_from Mongoid::Errors::DocumentNotFound do redirect_to photos_path end
+  rescue_from ActionView::MissingTemplate do redirect_to photos_path end
+  rescue_from ActionController::InvalidAuthenticityToken do redirect_to photos_path end
 private
 
   def current_user

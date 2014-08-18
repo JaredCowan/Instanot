@@ -1,14 +1,13 @@
 class SessionsController < ApplicationController
 
 	def new
-		redirect_to photos_path
 	end
 
 	def create
 		user = User.where(email: params[:email]).first
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
-			# redirect_to root_url
+			redirect_to root_url
 		else
 			flash.now.alert = "Email or password is invalid"
 			render "new"
