@@ -4,10 +4,6 @@ class PhotosController < ApplicationController
     @photos = Photo.all.reverse
     redirect_to login_path if !current_user
 
-    respond_to do |format|
-      format.html 
-      format.json { render json: @photos }
-    end
   end
 
   def new
