@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	
 	def index
 		@users = User.all
 		redirect_to login_path if !current_user
