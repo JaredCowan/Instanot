@@ -1,10 +1,6 @@
 class SessionsController < ApplicationController
 
 	def new
-		# @user = User.new
-		# if current_user
-			# redirect_to photos_path
-		end
 	end
 
 	def create
