@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	
 	def index
 		@users = User.all
 		redirect_to login_path if !current_user
@@ -6,13 +7,16 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
+		if current_user
+			redirect_to root_url
+		end
 	end
 
 	def create
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to photos_path, notice: "Thank you for signing up!"
+			redirect_to 4root_url, notice: "Thank you for signing up!"
 		else
 			render "new"
 		end
@@ -25,6 +29,6 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-		params.require(:user).permit(:email, :password, :password_confirmation, :username)
+		params.require(:user).permit(:username, :email, :password, :password_confirmation)
 	end
 end
