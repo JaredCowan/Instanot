@@ -3,7 +3,6 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all.reverse
     redirect_to login_path if !current_user
-
   end
 
   def new
