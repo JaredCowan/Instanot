@@ -20,6 +20,7 @@
             <%= image_tag p.image.url(:large), class: 'image' %>  <br />
             <span class="time_right"><%= time_ago_in_words(p.image_updated_at) + "\sago" %></span><br/><hr>
             <div class="image_feed_text"> <%= p.content %> <br /></div>
+            <%= link_to "X", photos_path, method: :destroy %>
              <br />
             </div>
         <% end %>
